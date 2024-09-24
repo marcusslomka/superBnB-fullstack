@@ -1,11 +1,11 @@
-package de.supercode.superbnb.dtos;
+package de.supercode.superbnb.dtos.apartmentDtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigInteger;
 
-public record CreateApartmentDto(
+public record ReqCreateApartmentDto(
         @NotBlank
         String city,
         @NotBlank

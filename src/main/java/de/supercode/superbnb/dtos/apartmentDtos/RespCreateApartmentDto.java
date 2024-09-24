@@ -1,9 +1,9 @@
-package de.supercode.superbnb.dtos;
+package de.supercode.superbnb.dtos.apartmentDtos;
 
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
-public record ResponseCreateApartmentDto(
+public record RespCreateApartmentDto(
     @Id
     long id,
     @NotBlank
