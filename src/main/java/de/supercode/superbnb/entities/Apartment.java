@@ -11,7 +11,7 @@ public class Apartment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String city;
-    private String adress;
+    private String address;
     private BigInteger costsPerNight;
     private boolean available;
     @OneToMany(mappedBy = "apartment", cascade = CascadeType.ALL)
@@ -33,12 +33,12 @@ public class Apartment {
         this.city = city;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public BigInteger getCostsPerNight() {

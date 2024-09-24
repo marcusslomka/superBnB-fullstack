@@ -1,10 +1,10 @@
 package de.supercode.superbnb.services;
 
 import de.supercode.superbnb.dtos.CreateApartmentDto;
+import de.supercode.superbnb.dtos.ResponseCreateApartmentDto;
 import de.supercode.superbnb.entities.Apartment;
 import de.supercode.superbnb.repositories.ApartmentRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
 public class ApartmentService {
@@ -14,13 +14,13 @@ public class ApartmentService {
         this.apartmentRepository = apartmentRepository;
     }
 
-    public void createNewApartment(CreateApartmentDto dto){
+    public ResponseCreateApartmentDto createNewApartment(CreateApartmentDto dto){
         Apartment apartment=new Apartment();
-        apartment.setAdress(dto.adress());
+        apartment.setAddress(dto.address());
         apartment.setCity(dto.city());
         apartment.setCostsPerNight(dto.costsPerNight());
         this.apartmentRepository.save(apartment);
-
+        return new ResponseCreateApartmentDto(apartment.getId(),apartment.getAddress());
     }
     public void updateApartment(Apartment apartment, long id){
 

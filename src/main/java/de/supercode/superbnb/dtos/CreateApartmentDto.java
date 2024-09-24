@@ -9,7 +9,7 @@ public record CreateApartmentDto(
         @NotBlank
         String city,
         @NotBlank
-        String adress,
+        String address,
         @NotNull
         BigInteger costsPerNight
 ) {
